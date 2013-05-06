@@ -247,7 +247,7 @@ public class FileTransferActivity extends Activity implements FileTransferStatus
     @Override
     public void notifySuccess()
     {
-        mFileTransferStatus.setText(R.id.success);
+        mFileTransferStatus.setText(R.string.success);
     }
 
     /**

@@ -6,4 +6,5 @@
     <string name="error_saving_file">Couldn\'t save the file</string>
     <string name="error_registering_for_service_updates">Service binding error occured</string>
     <string name="error_send_to_service">Can\'t send the file to the server</string>
+    <string name="success">File sent successfully</string>
 </resources>
