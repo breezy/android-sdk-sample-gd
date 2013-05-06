@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FileTransferSample</string>
+    <string name="status_text">File Tranfer Status:</string>
+    <string name="btn_tranfer_file">Transfer File</string>
+    <string name="error_saving_file">Couldn\'t save the file</string>
+    <string name="error_registering_for_service_updates">Service binding error occured</string>
+    <string name="error_send_to_service">Can\'t send the file to the server</string>
+</resources>

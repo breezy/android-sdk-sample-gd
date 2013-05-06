@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.breezy.good.android.sample"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application android:icon="@drawable/icon"
+        android:label="@string/app_name">
+        <activity android:name=".FileTransferActivity"
+            android:alwaysRetainTaskState="true">
+
+            <!-- An Activity in the application - this is something the user
+                 can launch and interact with.  The "name" attribute is the
+                 name of the class within your package that implements this
+                 activity. An Activity with an intent-filter must have the
+                 "alwaysRetainTaskState" attribute set to true for GD. -->
+
+            <!-- An IntentFilter tells the system when it should use your
+                 activity.  This allows the user to get to your activity
+                 without someone having to explicitly know to launch your
+                 class. -->
+            <intent-filter>
+
+                <!-- The MAIN action describes a main entry point into an
+                     activity, without any associated data. -->
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <!-- This places this activity into the main app list. -->
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Dedicated activity for receiving ICC intents  -->
+        <activity android:name=".IccReceivingActivity"
+            android:exported="true"
+            android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="com.good.gd.intent.action.ACTION_ICC_COMMAND" />
+            </intent-filter>
+        </activity>
+
+        <!-- GD builtin Activity and Service -->
+        <activity
+            android:name="com.good.gd.ui.GDInternalActivity">
+        </activity>
+        <service
+            android:name="com.good.gd.service.GDService"
+            android:enabled="true"
+            android:exported="false"
+            >
+        </service>
+        <!-- GT builtin Activity and Service -->
+        <activity android:name="com.good.gt.ndkproxy.icc.IccActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoDisplay"
+            >
+            <intent-filter>
+                <action android:name="com.good.gd.intent.action.ACTION_ICC_COMMAND" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.good.gt.ndkproxy.icc.IccManagerService"></service>
+
+    </application>
+</manifest>
